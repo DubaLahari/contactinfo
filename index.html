@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Form and To-Do List</title>
+ <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">Task2</div>
+      <ul>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>To-Do</li>
+      </ul>
+    </nav>
+    <main>
+
+      <section id="contact-form-section" aria-labelledby="contact-form-title">
+        <form id="contact-form" novalidate>
+          <h2 id="contact-form-title">Contact Us</h2>
+          <label for="name">Full Name <span aria-hidden="true" style="color: #d93025;">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required minlength="3" />
+          <div class="error-message" id="error-name"></div>
+
+          <label for="email">Email Address <span aria-hidden="true" style="color: #d93025;">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <div class="error-message" id="error-email"></div>
+
+          <label for="phone">Phone Number <small>(Optional)</small></label>
+          <input type="tel" id="phone" name="phone" placeholder="+1-555-555-5555" pattern="^\+?[0-9\s\-\(\)]{7,15}$" />
+          <div class="error-message" id="error-phone"></div>
+
+          <label for="subject">Subject <span aria-hidden="true" style="color: #d93025;">*</span></label>
+          <input type="text" id="subject" name="subject" placeholder="Message subject" required minlength="5" />
+          <div class="error-message" id="error-subject"></div>
+
+          <label for="message">Message <span aria-hidden="true" style="color: #d93025;">*</span></label>
+          <textarea id="message" name="message" placeholder="Write your message here..." required minlength="10"></textarea>
+          <div class="error-message" id="error-message"></div>
+
+          <button type="submit" aria-label="Send message">Send Message</button>
+          <div id="form-success" style="color:green; margin-top: 1rem; font-weight:bold;"></div>
+        </form>
+      </section>
+
+    
+      <section id="todo-section" aria-labelledby="todo-title">
+        <h2 id="todo-title">My To-Do List</h2>
+        <form id="todo-form" aria-label="Add new task">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Add a new task..."
+            aria-required="true"
+            aria-describedby="todo-error"
+            autocomplete="off"
+            />
+          <button type="submit" id="todo-add-btn" aria-label="Add task to the list">Add</button>
+        </form>
+        <div class="error-message" id="todo-error"></div>
+        <ul id="todo-list" aria-live="polite" aria-atomic="true" role="list">
+     
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+```
